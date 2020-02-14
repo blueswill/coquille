@@ -198,6 +198,10 @@ def show_goal():
         print('ERROR: the Coq process died')
         return
 
+    if isinstance(response, CT.Err):
+        info_msg = response.err
+        return
+
     if response.msg is not None:
         info_msg = response.msg
 

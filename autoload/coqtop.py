@@ -29,8 +29,7 @@ def parse_response(xml):
     if xml.get('val') == 'good':
         return Ok(parse_value(xml[0]), None)
     elif xml.get('val') == 'fail':
-        print('err: %s' % ET.tostring(xml))
-        return Err(parse_error(xml))
+        return Err(parse_value(xml[1]))
     else:
         assert False, 'expected "good" or "fail" in <value>'
 
@@ -226,6 +225,7 @@ def restart_coq(*args):
                 options + list(args)
               , stdin = subprocess.PIPE
               , stdout = subprocess.PIPE
+              , stderr = subprocess.PIPE
               , preexec_fn = ignore_sigint
             )
 
