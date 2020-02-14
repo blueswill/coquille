@@ -21,7 +21,7 @@ installed as a pathogen bundle as well) if you want Coquille to work.
 Once that is done, installing Coquille is just as simple as doing :
 
     cd ~/.vim/bundle
-    git clone https://github.com/trefis/coquille.git
+    git clone https://github.com/blueswill/coquille.git
 
 Not that by default, you will be in the `pathogen-bundle` branch, which also
 ships Vincent Aravantinos [syntax][3] and [indent][4] scripts for Coq, as well
